@@ -33,6 +33,6 @@ function! voiceroid#talk(text)
   " TODO: seprate text into chunks which length is under 8000
   let text = s:getVrxWho() . a:text
   let escaped_text = substitute(text, '"', '""', 'g')
-  call system(vrxpath . ' "' . escaped_text . '"')
+  call job_start(vrxpath . ' "' . escaped_text . '"')
   return v:shell_error
 endfunction

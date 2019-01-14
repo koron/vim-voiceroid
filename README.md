@@ -42,10 +42,21 @@
 let g:voiceroid_vrx_who = '琴葉 葵'
 ```
 
+### 改行の扱いを変更する
+
+複数行を喋らせる場合、デフォルトでは改行は維持されてVOICEROIDに渡されます。
+hard-wrapされたファイルを喋らせたい場合など、改行の扱いを変更したい場合は、
+`g:voiceroid_linebreak_replacer` で改行を置換する文字列を指定できます。
+
+設定例: 改行を単に無視し、1行に連結する
+
+```vim
+let g:voiceroid_linebreak_replacer = ''
+```
+
 ## Known Issues
 
-*   事前に 民安★TALK を起動しないと `:VoiceroidTalk` が終了しなくなる
-*   長い文章(8000バイトあるいは8000文字以上)をいっぺんに喋らせられない
+*   長い文章(およそ3.3万文字以上)をいっぺんに喋らせられない
 
 
 [voiceroid]:https://www.ah-soft.com/voiceroid/
