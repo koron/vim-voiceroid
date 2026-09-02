@@ -9,7 +9,8 @@ function! s:talk(...) range abort
   else
     let lines = getline(a:firstline, a:lastline)
     let lines = map(lines, 'trim(v:val)')
-    let text = join(lines, '')
+    let text = join(lines, get(g:, 'voiceroid_linebreak_replacer', "\n"))
+    let text = trim(text)
   endif
 
   try
